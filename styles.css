@@ -44,6 +44,10 @@ ol li {
   padding-bottom: 1rem;
 }
 
+abbr {
+  cursor: help;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #1d2021

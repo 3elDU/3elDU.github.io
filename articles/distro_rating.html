@@ -2,46 +2,76 @@
 <html>
 
 <head>
-    <title>distro_rating</title>
+  <title>distro_rating</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    #header {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>distro_rating</h1>
+  <header>
+    <div id="header">
+      <a href="../index.html">
+        <h1>home</h1>
+      </a>
+      <h1>distro_rating</h1>
+    </div>
+  </header>
 
-    <p>The best GNU/Linux distributions, in my opinion. In order from the best to worst</p>
+  <p>The best GNU+Linux distributions, in my opinion. In order from the best to worst</p>
+  <h5>Last updated - 30th May 2023</h5>
 
-    <ol>
-        <li>
-            Gentoo <br><br>
-            + Great package manager<br>
-            + Ability to fully configure the system to your likings<br>
-            My main distribution for the last 1.5 years
-        </li>
-        <li>
-            Fedora<br><br>
-            + Works really great out of the box<br>
-            + One of the best supported/maintained distributions
-        </li>
-        <li>
-            Arch<br><br>
-            <s>I USE ARCH BTW</s><br>
-            + Has similar philosophy to Gentoo - you configure your system from the ground-up<br>
-            + AUR
-        </li>
-        <li>
-            Debian testing<br><br>
-            + The debian we love and hate, with more up-to-date packages
-        </li>
-        <li>
-            Ubuntu / Kubuntu<br><br>
-            + Works out of the box<br>
-            + Very popular ( someone has probably already solved the problem you have )<br>
-            - Forced adoption of snaps
-        </li>
-    </ol>
+  <ol>
+    <li>
+      Gentoo <br><br>
+      + Great package manager<br>
+      + Ability to fully configure the system to your likings<br>
+      - Long compile times, especially on older hardware<br>
+      <s>My main distribution for the last 1.5 years</s>
+      Switched to arch, see <a href="#switched-to-arch">arch</a>
+    </li>
+    <li>
+      Fedora<br><br>
+      + Works really great out of the box<br>
+      + One of the best supported/maintained distributions
+    </li>
+    <li>
+      Arch<br><br>
+      <s>I USE ARCH BTW</s><br>
+      My main distribution from February 2023<br>
+      + Has similar philosophy to Gentoo - you configure your system from the ground-up<br>
+      + AUR <br>
+      + <abbr title="You use your system the way you like. I'm looking at you, Ubuntu!">Doesn't get in your
+        way&#8482;</abbr>
+      <p>
+        I switched to arch because of it's simplicity relative to Gentoo. I realized that I don't
+        really need all the flexibility that Gentoo provides. There was no profit from building all packages for
+        myself.
+        All I got was a heated laptop and wasted CPU cycles. Arch still has AUR, where you can find <code>-git</code>
+        versions of most packages. Writing your own <code>PKGBUILD</code> file is also fairly easy. I haven't found
+        myself
+        writing <code>PKGBUILD</code> files by hand yet, though.
+      </p>
+    </li>
+    <li>
+      Debian testing<br><br>
+      + The debian we love and hate, but with more up-to-date packages
+    </li>
+    <li>
+      Ubuntu / Kubuntu<br><br>
+      + Works out of the box<br>
+      + Very popular ( someone has probably already solved the problem you have )<br>
+      - Forced adoption of snaps
+    </li>
+  </ol>
 </body>
 
 </html>

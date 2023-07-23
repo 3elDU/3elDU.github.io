@@ -1,30 +1,426 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>@3elDU</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Zakhar Voloshchuk</title>
+
+    <style>
+        body {
+            margin: 0;
+
+            font-family: 'Chakra Petch', sans-serif;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        #canvas-container {
+            height: 100dvh;
+            width: 100%;
+            overflow: hidden;
+            position: fixed;
+            z-index: -1;
+        }
+
+        #title-wrapper {
+            width: 100%;
+            height: 100dvh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        }
+
+        #title {
+            font-size: 96px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        #aka {
+            display: flex;
+            justify-content: end;
+            margin: 0;
+        }
+
+        #subtitle {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        @media (max-width: 960px) {
+            #title {
+                font-size: 64px;
+            }
+
+            #subtitle {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 660px) {
+            #title {
+                font-size: 48px;
+            }
+
+            #subtitle {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #title {
+                font-size: 32px;
+            }
+
+            #subtitle {
+                font-size: 16px;
+            }
+        }
+
+        #technology {
+            white-space: pre;
+        }
+
+        #cursor {
+            content: " ";
+            margin-left: 2px;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+
+            animation: blinking 1s ease-in-out infinite;
+        }
+
+        @keyframes blinking {
+            0% {
+                opacity: 0%;
+            }
+
+            50% {
+                opacity: 100%;
+            }
+
+            100% {
+                opacity: 0%;
+            }
+        }
+
+        main {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(0.5rem);
+        }
+
+        #content {
+            max-width: 1200px;
+        }
+
+        #cards {
+            display: grid;
+            grid-template:
+                "a a a a" auto
+                "b c d e" auto
+                "g g g g" auto
+                "f f f f" auto;
+            gap: 1rem;
+        }
+
+        @media (max-width: 1100px) {
+            #cards {
+                grid-template:
+                    "a"
+                    "b"
+                    "c"
+                    "d"
+                    "e"
+                    "g"
+                    "f";
+            }
+        }
+
+        .card {
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .subcard {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        #projects {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1rem;
+        }
+
+        @media (max-width: 800px) {
+            #projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        #projects a {
+            display: block;
+            margin-bottom: 4px;
+            font-size: x-large;
+            font-weight: 700;
+        }
+
+        .project-badges {
+            display: flex;
+            gap: 0.5em;
+        }
+
+        ul {
+            padding-left: 1em;
+        }
+
+        li::marker {
+            content: "|  ";
+            font-weight: bold;
+        }
+
+        li {
+            padding-bottom: 3px;
+        }
+
+        li:last-child {
+            padding-bottom: 0;
+        }
+
+        .badge {
+            padding: 0px 4px;
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        a {
+            color: black;
+        }
+
+        #footer-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .line {
+            width: 35%;
+            height: 0;
+            margin-left: 1rem;
+            margin-right: 1rem;
+
+            border-bottom: 1px solid rgba(70, 70, 70, 0.5);
+        }
+    </style>
 </head>
 
 <body>
-  <h1>3elDU's page</h1>
-  <p>Glad that you found me here, on the internet. Not much to show here, though. You'd better look at my <a
-      href="https://github.com/3elDU">GitHub</a></p>
-  <p>If you want to say hello, here's my <a href="https://t.me/petafloppa">Telegram</a>; Also, I have <a
-      href="https://t.me/+0TzPaqbt3WdhZGFi">my personal blog</a> in telegram.</p>
-  <p>If you don't have telegram, or for any other reasons, feel free to use email - <a
-      href="mailto:3eldu@cock.li">3eldu@cock.li</a></p>
-  <p>My mastodon account - <a rel="me" href="https://meow.social/@petafloppa">@petafloppa@meow.social</a></p>
+    <header>
+        <div id="canvas-container">
+            <canvas id="canvas" style="width: 100%; height: 100%"></canvas>
+        </div>
 
-  <hr>
+        <div id="title-wrapper">
+            <div id="title-container">
+                <h5 id="aka">
+                    aka petafloppa
+                </h5>
+                <p id="title">
+                    Zakhar Voloschuk
+                </p>
+                <p id="subtitle">
+                    I like <span id="technology"></span> <span id="cursor"></span>
+                </p>
+            </div>
+        </div>
+    </header>
 
-  <p>Articles:</p>
+    <main>
+        <div id="content">
+            <div id="cards">
+                <div class="card" style="grid-area: a">
+                    <h2>Who am I</h2>
+                    <p>
+                        I am a developer from Ukraine, interested in many things ranging from Frontend to Embedded
+                        development. I like learning new things and improving my skills as a developer.
+                    </p>
+                </div>
 
-  <ul class="articles">
-    <li><a href="articles/distro_rating.html">distro_rating</a></li>
-  </ul>
+                <div class="card" style="grid-area: b">
+                    <h2>Frontend</h2>
+                    <ul>
+                        <li>
+                            <span class="badge">5/5</span>
+                            HTML/JS/CSS
+                        </li>
+                        <li>
+                            <span class="badge">4/5</span>
+                            Tailwind CSS
+                        </li>
+                        <li>
+                            <span class="badge">4/5</span>
+                            Vue.js
+                        </li>
+                        <li>
+                            <span class="badge">4/5</span>
+                            Nuxt3
+                        </li>
+                        <li>
+                            <span class="badge">3/5</span>
+                            ReactJS
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="grid-area: c">
+                    <h2>Programming languages</h2>
+                    <ul>
+                        <li>
+                            <span class="badge">5/5</span>
+                            Go
+                        </li>
+                        <li>
+                            <span class="badge">5/5</span>
+                            Python
+                        </li>
+                        <li>
+                            <span class="badge">4/5</span>
+                            C
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="grid-area: d">
+                    <h2>Technologies</h2>
+
+                    <ul>
+                        <li>
+                            <span class="badge">5/5</span>
+                            Linux
+                        </li>
+                        <li>
+                            <span class="badge">4/5</span>
+                            Docker
+                        </li>
+                        <li>
+                            <span class="badge">3/5</span>
+                            Bash
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="grid-area: e;">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>
+                            <span class="badge">B1</span>
+                            English
+                        </li>
+                        <li>
+                            <span class="badge">Native</span>
+                            Ukrainian
+                        </li>
+                        <li>
+                            <span class="badge">Native</span>
+                            Russian
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card" style="grid-area: g">
+                    <h2>Personal projects</h2>
+                    <div id="projects">
+                        <div class="subcard">
+                            <a href="https://github.com/3elDU/bamboo">Bamboo</a>
+                            <div class="project-badges">
+                                <span class="badge">Go</span>
+                                <span class="badge">Ebiten</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum id voluptatem nobis quasi
+                                aperiam velit quisquam deserunt numquam maiores qui sit, ipsam nulla eligendi laboriosam
+                                quas praesentium nemo recusandae quaerat?
+                            </p>
+                        </div>
+
+                        <div class="subcard">
+                            <a href="https://github.com/3elDU/cell-simulation-js">Cell simulation</a>
+                            <div class="project-badges">
+                                <span class="badge">Web</span>
+                                <span class="badge">Nuxt3</span>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod sit illo rem velit
+                                voluptas nemo, harum quasi, dignissimos eum vel culpa cupiditate voluptatum repellat
+                                impedit placeat quis nostrum ducimus expedita.
+                            </p>
+                        </div>
+
+                        <div class="subcard">
+                            <a href="https://github.com/3elDU/spdl">spdl</a>
+                            <div class="project-badges">
+                                <span class="badge">Python</span>
+                                <span class="badge">CLI</span>
+                            </div>
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, accusantium!
+                                Voluptatem, quas. Soluta eligendi saepe, earum velit nesciunt laborum dicta eius qui
+                                molestiae? Quia, ipsum doloremque eligendi voluptatem harum veniam?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="grid-area: f">
+                    <h2>Links & Contacts</h2>
+                    <ul>
+                        <li>
+                            <a href="https://t.me/petafloppa">Telegram</a>
+                        </li>
+                        <li>
+                            <a href="mailto:3elduu@gmail.com">E-mail</a>
+                        </li>
+                        <li>
+                            <a rel="me" href="https://meow.social/@petafloppa">Mastodon</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/3elDU">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="footer-container">
+                <div class="line"></div>
+                <footer>
+                    © Zakhar Voloshchuk 2023
+                </footer>
+                <div class="line"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="gradient.js"></script>
+    <script src="typing.js"></script>
 </body>
 
 </html>

@@ -35,7 +35,6 @@ const technologies = [
     "Cats"
 ]
 shuffle(technologies);
-console.log(technologies);
 let currentTechnology = 0;
 
 let targetText = technologies[currentTechnology];

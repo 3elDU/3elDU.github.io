@@ -31,4 +31,7 @@
         box-shadow: none;
     }
 
+    .line {
+        border-color: white;
+    }
 }

@@ -1,79 +1,245 @@
 body {
-  font-family: monospace;
-  background-color: #ebdbb2;
+  margin: 0;
+  font-family: 'Chakra Petch', sans-serif;
+  background: rgb(89, 67, 134);
+  background: linear-gradient(90deg, rgba(89, 67, 134, 1) 0%, rgba(48, 48, 163, 1) 49%, rgba(44, 110, 124, 1) 100%);
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol {
-  color: #1d2021;
+code {
+  font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
 }
 
-hr {
-  border-color: #7c6f64;
+h2 {
+  margin-top: 0;
 }
 
-h6 {
-  color: #1d2021;
+#canvas-container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: -1;
+}
+
+canvas {
+  image-rendering: pixelated;
+}
+
+#title-wrapper {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#title {
+  font-size: 96px;
+  font-weight: 700;
+  margin: 0;
+}
+
+#aka {
+  display: flex;
+  justify-content: end;
+  margin: 0;
+}
+
+#subtitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  #title {
+    font-size: 64px;
+  }
+
+  #subtitle {
+    font-size: 32px;
+  }
+
+  #aka {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 660px) {
+  #title {
+    font-size: 48px;
+  }
+
+  #subtitle {
+    font-size: 24px;
+  }
+
+  #aka {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #title {
+    font-size: 32px;
+  }
+
+  #subtitle {
+    font-size: 16px;
+  }
+
+  #aka {
+    font-size: 12px;
+  }
+}
+
+#technology {
+  white-space: pre;
+}
+
+#cursor {
+  content: " ";
+  margin-left: 2px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+
+  animation: blinking 1s ease-in-out infinite;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.5rem);
+}
+
+#content {
+  max-width: 1200px;
+}
+
+#cards {
+  display: grid;
+  grid-template:
+    "a a a a" auto
+    "b c d e" auto
+    "g g g g" auto
+    "h h h h" auto
+    "f f f f" auto;
+  gap: 1rem;
+}
+
+@media (max-width: 1100px) {
+  #cards {
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "g"
+      "h"
+      "f";
+  }
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.subcard {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  #projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+#projects a {
+  display: block;
+  margin-bottom: 4px;
+  font-size: x-large;
+  font-weight: 700;
+}
+
+.project-badges {
+  display: flex;
+  gap: 0.5em;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+li::marker {
+  content: "|  ";
+  font-weight: bold;
+}
+
+li {
+  padding-bottom: 3px;
+}
+
+li:last-child {
+  padding-bottom: 0;
+}
+
+.badge {
+  padding: 0px 4px;
+  background-color: white;
+  border-radius: 3px;
 }
 
 a {
-  color: #8f3f71;
+  color: black;
 }
 
-a:visited {
-  color: #79740e;
+#footer-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-ul.articles {
-  padding-left: 0;
-  list-style: none;
+footer {
+  white-space: nowrap;
 }
 
-ul.articles li {
-  display: inline-block;
-}
+.line {
+  width: 100%;
+  height: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
-ol li {
-  padding-bottom: 1rem;
-}
-
-abbr {
-  cursor: help;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1d2021
-  }
-
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol {
-    color: #ebdbb2;
-  }
-
-  a {
-    color: #fabd2f;
-  }
-
-  a:visited {
-    color: #98971a;
-  }
-
-  body {
-    background-color: #1d2021
-  }
+  border-bottom: 1px solid rgba(70, 70, 70, 0.5);
 }

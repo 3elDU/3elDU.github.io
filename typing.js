@@ -23,7 +23,7 @@ const technologies = [
     "CSS",
     "Linux",
     "Docker",
-    "Vim",
+    "Neovim",
     "OpenBSD",
     "Nuxt",
     "Vue.js",

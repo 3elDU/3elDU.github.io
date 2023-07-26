@@ -36,7 +36,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <div id="content">
             <div id="cards">
                 <div class="card" style="grid-area: a">
@@ -166,7 +166,7 @@
                             </div>
                             <p>
                                 Python script to download liked tracks from your spotify account. Uses
-                                <code>youtube-dl</code> to search and download tracks from youtube. Automatically
+                                <b>youtube-dl</b> to search and download tracks from youtube. Automatically
                                 downloads metadata for each track.
                                 When ran for 2nd, 3rd, nth time, scans for new tracks added to the library, and
                                 downloads them.
@@ -203,6 +203,10 @@
                 </div>
             </div>
 
+            <div id="reenable-effects-container" style="display: none; margin-top: 2rem; justify-content: center">
+                <button id="reenable-effects-button">Re-enable all effects</button>
+            </div>
+
             <div id="footer-container">
                 <div class="line"></div>
                 <footer>
@@ -215,6 +219,7 @@
 
     <script src="gradient.js"></script>
     <script src="typing.js"></script>
+    <script src="perfmon.js"></script>
 </body>
 
 </html>

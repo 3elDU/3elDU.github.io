@@ -1,11 +1,13 @@
+// Interpolate between two values
 function lerp(x, y, t) {
-    return x * t + y * (1 - t);
+    return x * (1 - t) + y * t;
 }
-function lerpGradient([r1, g1, b1], [r2, g2, b2], percent) {
+// Interpolate between two RGB colors
+function lerpColor([r1, g1, b1], [r2, g2, b2], percent) {
     return [
-        lerp(r2, r1, percent),
-        lerp(g2, g1, percent),
-        lerp(b2, b1, percent),
+        lerp(r1, r2, percent),
+        lerp(g1, g2, percent),
+        lerp(b1, b2, percent),
     ]
 }
 function randomColor() {
@@ -19,7 +21,7 @@ function randomColor() {
 const canvas = document.getElementById("canvas");
 const canvasContainer = document.querySelector("#canvas-container");
 let pixelSize, screenHeight, screenWidth;
-let fps = 1 / 30;
+let fps = 30;
 
 function updateCanvasSize() {
     canvas.width = canvasContainer.clientWidth;
@@ -63,8 +65,8 @@ let changingColor = Math.floor(Math.random() * 4);
 function render() {
     for (let x = 0; x < screenWidth; x++) {
         for (let y = 0; y < screenHeight; y++) {
-            let [r, g, b] = lerpGradient(colors[0].color, colors[1].color, x / screenWidth);
-            let [r2, g2, b2] = lerpGradient(colors[2].color, colors[3].color, y / screenHeight);
+            let [r, g, b] = lerpColor(colors[0].color, colors[1].color, x / screenWidth);
+            let [r2, g2, b2] = lerpColor(colors[2].color, colors[3].color, y / screenHeight);
 
             ctx.fillStyle = `rgb(${(r + r2) / 2}, ${(g + g2) / 2}, ${(b + b2) / 2})`;
             ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize + 1, pixelSize + 1);
@@ -72,7 +74,7 @@ function render() {
     }
 
     ctx.strokeStyle = `rgba(255, 255, 255, 0.25)`;
-    ctx.lineWidth = 0.5;
+    ctx.lineWidth = 1;
 
     // draw vertical lines
     for (let x = 1; x < screenWidth; x++) {
@@ -89,27 +91,26 @@ function render() {
         ctx.lineTo(screenWidth * pixelSize, y * pixelSize);
         ctx.stroke();
     }
-
-    requestAnimationFrame(render);
 }
-requestAnimationFrame(render);
+setInterval(render, 1000 / fps);
 
-let i = fps;
+let i = 1 / fps;
 function updateColors() {
     let orig = colors[changingColor].original;
     let newColor = colors[changingColor].new;
-    colors[changingColor].color = lerpGradient(orig, newColor, i);
-    i += fps;
+    colors[changingColor].color = lerpColor(orig, newColor, i);
+    i += 1 / fps;
 
     if (i >= 1) {
         colors[changingColor].original = colors[changingColor].color;
         colors[changingColor].new = randomColor();
         changingColor = Math.floor(Math.random() * 4);
-        i = fps;
+        i = 1 / fps;
     }
 }
-setInterval(updateColors, 1000 * fps);
+setInterval(updateColors, 1000 / fps);
 
 window.onresize = () => {
     updateCanvasSize();
+    render();
 };

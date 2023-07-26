@@ -6,28 +6,31 @@
 
         background: rgb(39, 29, 59);
         background: linear-gradient(90deg, rgba(39, 29, 59, 1) 0%, rgba(11, 11, 77, 1) 49%, rgba(6, 39, 46, 1) 100%);
+
+        --main-bg: rgba(0, 0, 0, 0.5);
+        --card-bg: rgba(0, 0, 0, 0.4);
+        --subcard-bg: rgba(0, 0, 0, 0.3);
+
+        --fallback-main-bg: #202020;
+        --fallback-card-bg: #303030;
+        --fallback-subcard-bg: #404040;
     }
 
     a {
         color: white;
     }
 
+    button {
+        color: white;
+        border-color: white;
+    }
+
     /* Tint the canvas a bit */
     canvas {
-        filter: brightness(0.6);
-    }
-
-    /* Dark background colors */
-    main {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .card {
-        background-color: rgba(0, 0, 0, 0.4);
+        filter: brightness(0.8);
     }
 
     .subcard {
-        background-color: rgba(0, 0, 0, 0.3);
         box-shadow: none;
     }
 

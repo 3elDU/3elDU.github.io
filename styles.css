@@ -10,6 +10,7 @@ body {
 
   --main-bg: rgba(255, 255, 255, 0.5);
   --card-bg: rgba(255, 255, 255, 0.4);
+  --card-bg-hover: rgba(255, 255, 255, 0.6);
   --subcard-bg: rgba(255, 255, 255, 0.3);
 
   --fallback-main-bg: #eeeeee;
@@ -52,6 +53,7 @@ canvas {
 }
 
 #title-wrapper {
+  position: relative;
   color: black;
 
   width: 100%;
@@ -62,6 +64,31 @@ canvas {
   align-items: center;
 
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#down-arrow {
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-12px);
+
+  fill: rgba(255, 255, 255, 0.75);
+  animation: bounce 5s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(-24px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(-24px);
+  }
 }
 
 #title {
@@ -197,6 +224,13 @@ main {
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--card-bg);
+
+  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
+  transition-delay: 50ms;
+}
+.card:hover {
+  transform: scale(1.05);
+  background-color: var(--card-bg-hover);
 }
 
 .subcard {

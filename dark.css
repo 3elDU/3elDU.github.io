@@ -9,6 +9,7 @@
 
         --main-bg: rgba(0, 0, 0, 0.5);
         --card-bg: rgba(0, 0, 0, 0.4);
+        --card-bg-hover: rgba(0, 0, 0, 0.6);
         --subcard-bg: rgba(0, 0, 0, 0.3);
 
         --fallback-main-bg: #202020;

@@ -50,6 +50,7 @@ class Color {
   }
 }
 
+const mousePixels = [];
 const colors = [Color.random(), Color.random(), Color.random(), Color.random()];
 let changingColor = Math.floor(Math.random() * 4);
 
@@ -72,24 +73,14 @@ function render() {
     }
   }
 
-  ctx.strokeStyle = `rgba(255, 255, 255, 0.25)`;
-  ctx.lineWidth = 1;
-
-  // // draw vertical lines
-  // for (let x = 1; x < screenWidth; x++) {
-  //     ctx.beginPath();
-  //     ctx.moveTo(x * pixelSize, 0);
-  //     ctx.lineTo(x * pixelSize, screenHeight * pixelSize);
-  //     ctx.stroke();
-  // }
-
-  // // draw horizontal lines
-  // for (let y = 1; y < screenHeight; y++) {
-  //     ctx.beginPath();
-  //     ctx.moveTo(0, y * pixelSize);
-  //     ctx.lineTo(screenWidth * pixelSize, y * pixelSize);
-  //     ctx.stroke();
-  // }
+  for (const pixel of mousePixels) {
+    ctx.fillStyle = `rgba(255, 255, 255, ${pixel.alpha / 3})`;
+    ctx.fillRect(pixel.x * pixelSize, pixel.y * pixelSize, pixelSize, pixelSize);
+    pixel.alpha -= 1 / fps;
+    if (pixel.alpha <= 0) {
+      mousePixels.splice(mousePixels.indexOf(pixel), 1);
+    }
+  }
 }
 setInterval(render, 1000 / fps);
 
@@ -112,4 +103,18 @@ setInterval(updateColors, 1000 / fps);
 window.onresize = () => {
   updateCanvasSize();
   render();
+};
+
+const previousMouseCell = [NaN, NaN];
+window.onmousemove = (event) => {
+  const x = Math.floor(event.clientX / pixelSize);
+  const y = Math.floor(event.clientY / pixelSize);
+  if (x !== previousMouseCell[0] || y !== previousMouseCell[1]) {
+    mousePixels.push({
+      x, y,
+      alpha: 1,
+    });
+    previousMouseCell[0] = x;
+    previousMouseCell[1] = y;
+  }
 };

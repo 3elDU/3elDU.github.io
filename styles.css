@@ -4,9 +4,14 @@
 
 body {
   margin: 0;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   background: rgb(89, 67, 134);
-  background: linear-gradient(90deg, rgba(89, 67, 134, 1) 0%, rgba(48, 48, 163, 1) 49%, rgba(44, 110, 124, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(89, 67, 134, 1) 0%,
+    rgba(48, 48, 163, 1) 49%,
+    rgba(44, 110, 124, 1) 100%
+  );
 
   --main-bg: rgba(255, 255, 255, 0.5);
   --card-bg: rgba(255, 255, 255, 0.4);
@@ -33,7 +38,7 @@ button {
 }
 
 code {
-  font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+  font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", monospace;
 }
 
 h2 {
@@ -67,14 +72,14 @@ canvas {
 }
 
 #down-arrow {
-  width: 32px;
-  height: 32px;
-
   position: absolute;
   bottom: 24px;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-12px);
+  left: 0;
+  right: 0;
+  height: 32px;
+
+  display: flex;
+  justify-content: center;
 
   fill: rgba(255, 255, 255, 0.75);
   animation: bounce 5s infinite;
@@ -84,7 +89,7 @@ canvas {
     transform: translateY(-24px);
   }
   50% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   100% {
     transform: translateY(-24px);
@@ -226,11 +231,12 @@ main {
   background-color: var(--card-bg);
 
   transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
-  transition-delay: 50ms;
 }
-.card:hover {
-  transform: scale(1.05);
-  background-color: var(--card-bg-hover);
+@media (pointer: fine) and (min-width: 768px) {
+  .card:hover {
+    transform: scale(1.05);
+    background-color: var(--card-bg-hover);
+  }
 }
 
 .subcard {
@@ -290,7 +296,7 @@ li:last-child {
 }
 
 a {
-  color: black
+  color: black;
 }
 
 #footer-container {

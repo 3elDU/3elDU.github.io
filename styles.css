@@ -230,12 +230,14 @@ main {
   border-radius: 1rem;
   background-color: var(--card-bg);
 
-  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out,
+    border-radius 200ms ease-in-out;
 }
 @media (pointer: fine) and (min-width: 768px) {
   .card:hover {
     transform: scale(1.05);
     background-color: var(--card-bg-hover);
+    border-radius: 0.5rem;
   }
 }
 

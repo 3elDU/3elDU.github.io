@@ -75,7 +75,12 @@ function render() {
 
   for (const pixel of mousePixels) {
     ctx.fillStyle = `rgba(255, 255, 255, ${pixel.alpha / 3})`;
-    ctx.fillRect(pixel.x * pixelSize, pixel.y * pixelSize, pixelSize, pixelSize);
+    ctx.fillRect(
+      pixel.x * pixelSize,
+      pixel.y * pixelSize,
+      pixelSize,
+      pixelSize
+    );
     pixel.alpha -= 1 / fps;
     if (pixel.alpha <= 0) {
       mousePixels.splice(mousePixels.indexOf(pixel), 1);
@@ -111,7 +116,8 @@ window.onmousemove = (event) => {
   const y = Math.floor(event.clientY / pixelSize);
   if (x !== previousMouseCell[0] || y !== previousMouseCell[1]) {
     mousePixels.push({
-      x, y,
+      x,
+      y,
       alpha: 1,
     });
     previousMouseCell[0] = x;

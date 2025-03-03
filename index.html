@@ -1,248 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Zakhar Voloshchuk</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="dark.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dark.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div id="canvas-container">
-            <canvas id="canvas" style="width: 100%; height: 100%"></canvas>
+      <div id="canvas-container">
+        <canvas id="canvas" style="width: 100%; height: 100%"></canvas>
+      </div>
+
+      <div id="title-wrapper">
+        <div id="title-container">
+          <h2 id="aka">aka petafloppa</h2>
+          <p id="title">Zakhar Voloschuk</p>
+          <p id="subtitle">
+            I like
+            <span id="technology"><noscript>Programming</noscript></span>
+            <span id="cursor"></span>
+          </p>
         </div>
 
-        <div id="title-wrapper">
-            <div id="title-container">
-                <h2 id="aka">
-                    aka petafloppa
-                </h2>
-                <p id="title">
-                    Zakhar Voloschuk
-                </p>
-                <p id="subtitle">
-                    I like <span id="technology"><noscript>Programming</noscript></span> <span id="cursor"></span>
-                </p>
-            </div>
-
-            <div id="down-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <title>arrow-down</title>
-                    <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" />
-                </svg>
-            </div>
+        <div id="down-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>arrow-down</title>
+            <path
+              d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+            />
+          </svg>
         </div>
+      </div>
     </header>
 
     <main id="main">
-        <div id="content">
-            <div id="cards">
-                <div class="card" style="grid-area: a">
-                    <h2>Who am I</h2>
-                    <p>
-                        I am a developer from Ukraine, interested in many things ranging from Frontend to Embedded
-                        development. I like learning new things and improving my skills as a developer.
-                    </p>
+      <div id="content">
+        <div id="cards">
+          <section class="card" style="grid-area: a">
+            <h2>Who am I</h2>
+            <p>
+              I am a full-stack developer from Ukraine, interested in many
+              things ranging from Frontend to Embedded development. I like
+              learning new things and improving my skills as a developer.
+            </p>
+          </section>
+
+          <section class="card" style="grid-area: b">
+            <h2>Frontend</h2>
+            <ul>
+              <li>
+                <span class="badge">5/5</span>
+                Tailwind CSS
+              </li>
+              <li>
+                <span class="badge">5/5</span>
+                Vue.js
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                Nuxt3
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                Electron
+              </li>
+              <li>
+                <span class="badge">3/5</span>
+                ReactJS
+              </li>
+            </ul>
+          </section>
+
+          <section class="card" style="grid-area: c">
+            <h2>Programming languages</h2>
+            <ul>
+              <li>
+                <span class="badge">5/5</span>
+                TypeScript
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                Go
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                C
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                JavaScript
+              </li>
+              <li>
+                <span class="badge">3/5</span>
+                Python
+              </li>
+              <li>
+                <span class="badge">2/5</span>
+                Bash
+              </li>
+            </ul>
+          </section>
+
+          <section class="card" style="grid-area: d">
+            <h2>Technologies</h2>
+
+            <ul>
+              <li>
+                <span class="badge">5/5</span>
+                Linux
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                Node.js
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                Docker
+              </li>
+              <li>
+                <span class="badge">4/5</span>
+                Nix
+              </li>
+            </ul>
+          </section>
+
+          <section class="card" style="grid-area: e">
+            <h2>Languages</h2>
+            <ul>
+              <li>
+                <span class="badge">B1</span>
+                English
+              </li>
+              <li>
+                <span class="badge">Native</span>
+                Ukrainian
+              </li>
+              <li>
+                <span class="badge">Native</span>
+                Russian
+              </li>
+            </ul>
+          </section>
+
+          <section class="card" style="grid-area: g">
+            <h2>Personal projects</h2>
+            <div id="projects">
+              <article class="subcard">
+                <a href="https://github.com/3elDU/bamboo">Bamboo</a>
+                <div class="project-badges">
+                  <span class="badge">Go</span>
+                  <span class="badge">Ebiten</span>
                 </div>
+                <p>
+                  2D Top-down sandbox inspired by Minecraft. You spawn on an
+                  island an need to survive. Find resources, craft equipment and
+                  make yourself home.
+                </p>
+              </article>
 
-                <div class="card" style="grid-area: b">
-                    <h2>Frontend</h2>
-                    <ul>
-                        <li>
-                            <span class="badge">5/5</span>
-                            Tailwind CSS
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            Vue.js
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            Nuxt3
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            Electron
-                        </li>
-                        <li>
-                            <span class="badge">3/5</span>
-                            ReactJS
-                        </li>
-                    </ul>
+              <article class="subcard">
+                <a href="https://github.com/3elDU/cell-simulation-js"
+                  >Cell simulation</a
+                >
+                <div class="project-badges">
+                  <span class="badge">Web</span>
+                  <span class="badge">Vue3</span>
                 </div>
+                <p>
+                  Genetic algorithm that simulates living cells: each cell has a
+                  set of instructions (genome), essentially acting as a tiny VM.
+                  Cells can move, make energy through photosynthesis, mutate,
+                  kill each other and reproduce, just like their real
+                  counterparts.
+                </p>
+              </article>
 
-                <div class="card" style="grid-area: c">
-                    <h2>Programming languages</h2>
-                    <ul>
-                        <li>
-                            <span class="badge">5/5</span>
-                            Go
-                        </li>
-                        <li>
-                            <span class="badge">5/5</span>
-                            Python
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            C
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            TypeScript
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            JavaScript
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            CSS
-                        </li>
-                    </ul>
+              <article class="subcard">
+                <a href="https://github.com/3elDU/spdl">spdl</a>
+                <div class="project-badges">
+                  <span class="badge">Desktop</span>
+                  <span class="badge">Electron</span>
+                  <span class="badge">Vue.js</span>
+                  <span class="badge">TypeScript</span>
+                  <span class="badge">Quasar</span>
                 </div>
-
-                <div class="card" style="grid-area: d">
-                    <h2>Technologies</h2>
-
-                    <ul>
-                        <li>
-                            <span class="badge">5/5</span>
-                            Linux
-                        </li>
-                        <li>
-                            <span class="badge">4/5</span>
-                            Docker
-                        </li>
-                        <li>
-                            <span class="badge">3/5</span>
-                            Bash
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card" style="grid-area: e;">
-                    <h2>Languages</h2>
-                    <ul>
-                        <li>
-                            <span class="badge">B1</span>
-                            English
-                        </li>
-                        <li>
-                            <span class="badge">Native</span>
-                            Ukrainian
-                        </li>
-                        <li>
-                            <span class="badge">Native</span>
-                            Russian
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card" style="grid-area: g">
-                    <h2>Personal projects</h2>
-                    <div id="projects">
-                        <div class="subcard">
-                            <a href="https://github.com/3elDU/bamboo">Bamboo</a>
-                            <div class="project-badges">
-                                <span class="badge">Go</span>
-                                <span class="badge">Ebiten</span>
-                            </div>
-                            <p>
-                                2D Top-down sandbox inspired by Minecraft. You spawn on an island an need to survive.
-                                Find resources, craft equipment and make yourself home.
-                            </p>
-                        </div>
-
-                        <div class="subcard">
-                            <a href="https://github.com/3elDU/cell-simulation-js">Cell simulation</a>
-                            <div class="project-badges">
-                                <span class="badge">Web</span>
-                                <span class="badge">Nuxt3</span>
-                            </div>
-                            <p>
-                                Genetic algorithm that simulates living cells: each cell has a set of instructions
-                                (genome), essentially acting as a tiny VM. Cells can move, make energy through
-                                photosynthesis,
-                                mutate, kill each other and
-                                reproduce, just like their real counterparts.
-                            </p>
-                        </div>
-
-                        <div class="subcard">
-                            <a href="https://github.com/3elDU/spdl">spdl</a>
-                            <div class="project-badges">
-                                <span class="badge">Desktop</span>
-                                <span class="badge">Electron</span>
-                                <span class="badge">Vue.js</span>
-                                <span class="badge">TypeScript</span>
-                                <span class="badge">Quasar</span>
-                            </div>
-                            <p>
-                                An electron app to download tracks/playlists via your spotify account.<br />
-                                As spotify prohibits ripping tracks from their platform, we search the best matching
-                                video on YouTube, and download the track
-                                using <b>yt-dlp</b> in the .mp3 format<br />
-                                Based on the older Python script, but now with friendly user interface, and a lot more
-                                options.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" style="grid-area: h">
-                    <h2>Articles</h2>
-                    <ul>
-                        <li>
-                            <a href="./articles/distro_rating.html">distro_rating</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card" style="grid-area: f">
-                    <h2>Links & Contacts</h2>
-                    <ul>
-                        <li>
-                            <a href="https://t.me/petafloppa">Telegram</a>
-                        </li>
-                        <li>
-                            <a href="mailto:3elduu@gmail.com">E-mail</a>
-                        </li>
-                        <li>
-                            <a rel="me" href="https://meow.social/@petafloppa">Mastodon</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/3elDU">GitHub</a>
-                        </li>
-                    </ul>
-                </div>
+                <p>
+                  An electron app to download tracks/playlists via your spotify
+                  account.<br />
+                  As spotify prohibits ripping tracks from their platform, we
+                  search the best matching video on YouTube, and download the
+                  track using <b>yt-dlp</b> in the .mp3 format<br />
+                  Based on the older Python script, but now with friendly user
+                  interface, and a lot more options.
+                </p>
+              </article>
             </div>
+          </section>
 
-            <div id="reenable-effects-container" style="display: none; margin-top: 2rem; justify-content: center">
-                <button id="reenable-effects-button">Re-enable all effects</button>
-            </div>
-
-            <div id="footer-container">
-                <div class="line"></div>
-                <footer>
-                    © Zakhar Voloshchuk 2025
-                </footer>
-                <div class="line"></div>
-            </div>
+          <section class="card" style="grid-area: h">
+            <h2>Links & Contacts</h2>
+            <ul id="contacts">
+              <li>
+                <a
+                  href="https://t.me/petafloppa"
+                  title="Telegram"
+                  target="_blank"
+                >
+                  <img src="icons/telegram.svg" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:3elduu@gmail.com"
+                  title="E-mail"
+                  target="_blank"
+                >
+                  <img src="icons/email.svg" />
+                </a>
+              </li>
+              <li>
+                <a
+                  rel="me"
+                  href="https://meow.social/@petafloppa"
+                  title="Mastodon"
+                  target="_blank"
+                >
+                  <img src="icons/mastodon.svg" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/3elDU"
+                  title="GitHub"
+                  target="_blank"
+                >
+                  <img src="icons/github.svg" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://blog.petafloppa.cc/"
+                  title="Blog"
+                  target="_blank"
+                >
+                  <img src="icons/podcasts.svg" />
+                </a>
+              </li>
+            </ul>
+          </section>
         </div>
+
+        <div
+          id="reenable-effects-container"
+          style="display: none; margin-top: 2rem; justify-content: center"
+        >
+          <button id="reenable-effects-button">Re-enable all effects</button>
+        </div>
+
+        <div id="footer-container">
+          <div class="line"></div>
+          <footer>© Zakhar Voloshchuk 2024</footer>
+          <div class="line"></div>
+        </div>
+      </div>
     </main>
 
     <script src="gradient.js"></script>
     <script src="typing.js"></script>
     <script src="perfmon.js"></script>
-</body>
-
+  </body>
 </html>

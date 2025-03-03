@@ -21,6 +21,16 @@ body {
   --fallback-main-bg: #eeeeee;
   --fallback-card-bg: #dddddd;
   --fallback-subcard-bg: #cccccc;
+
+  --transition: 200ms ease-in-out;
+
+  --card-padding: 1rem;
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --transition: 0ms ease-in-out;
+  }
 }
 
 button {
@@ -206,9 +216,8 @@ main {
     "a a a a" auto
     "b c d e" auto
     "g g g g" auto
-    "h h h h" auto
-    "f f f f" auto;
-  gap: 1rem;
+    "h h h h" auto;
+  gap: var(--card-padding);
 }
 
 @media (max-width: 1100px) {
@@ -220,30 +229,29 @@ main {
       "d"
       "e"
       "g"
-      "h"
-      "f";
+      "h";
   }
 }
 
 .card {
-  padding: 1rem;
-  border-radius: 1rem;
+  padding: var(--card-padding);
+  border-radius: var(--card-padding);
   background-color: var(--card-bg);
 
-  transition: transform 200ms ease-in-out, background-color 200ms ease-in-out,
-    border-radius 200ms ease-in-out;
+  transition: transform var(--transition), background-color var(--transition),
+    border-radius var(--transition);
 }
 @media (pointer: fine) and (min-width: 768px) {
   .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: var(--card-bg-hover);
-    border-radius: 0.5rem;
+    border-radius: calc(var(--card-padding) * 2 / 3);
   }
 }
 
 .subcard {
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: var(--card-padding);
+  border-radius: calc(var(--card-padding) / 2);
   background-color: var(--subcard-bg);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -295,6 +303,28 @@ li:last-child {
   background-color: white;
   color: black;
   border-radius: 3px;
+}
+
+#contacts {
+  display: flex;
+  list-style: none;
+  gap: calc(var(--card-padding) / 2);
+  margin: 0;
+  padding: 0;
+}
+#contacts > li::marker {
+  content: "";
+}
+#contacts > li > a > img {
+  border-radius: 8px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  background: var(--subcard-bg);
+  transition: background var(--transition);
+  &:hover {
+    background: var(--card-bg-hover);
+  }
 }
 
 a {

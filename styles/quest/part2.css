@@ -1,0 +1,33 @@
+#quest:has(> #part2.open) {
+  background: black;
+}
+
+#part2 {
+  display: none;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &[data-win="true"] > #part2-canvas {
+    border: none;
+  }
+  &[data-lose="true"] > #part2-canvas {
+    opacity: 0;
+  }
+  &[data-lose="true"] > #part2-timer {
+    visibility: hidden;
+  }
+}
+
+#part2-canvas {
+  border: 3px solid white;
+  border-radius: 8px;
+  transition: opacity 3s linear;
+}
+
+#part2-timer[data-low-on-time] {
+  color: red;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "petafloppa.cc",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "author": "petafloppa",
+  "homepage": "https://petafloppa.cc",
+  "dependencies": {
+    "vite": "^6.2.1"
+  }
+}

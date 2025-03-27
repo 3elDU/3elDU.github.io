@@ -1,0 +1,21 @@
+body:has(> #quest.open) {
+  overflow-y: hidden;
+}
+
+#quest {
+  display: none;
+
+  z-index: 99;
+  position: absolute;
+  inset: 0;
+
+  transition: background 3s ease-in-out;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+
+  &.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

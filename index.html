@@ -13,8 +13,11 @@
 
     <title>Zakhar Voloshchuk</title>
 
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="dark.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/dark.css" />
+    <link rel="stylesheet" href="styles/quest/index.css" />
+    <link rel="stylesheet" href="styles/quest/part1.css" />
+    <link rel="stylesheet" href="styles/quest/part2.css" />
   </head>
 
   <body>
@@ -271,14 +274,31 @@
 
         <div id="footer-container">
           <div class="line"></div>
-          <footer>© Zakhar Voloshchuk 2024</footer>
+          <footer>© Zakhar Voloshchuk <span id="copyright-year"></span></footer>
           <div class="line"></div>
         </div>
       </div>
     </main>
 
-    <script src="gradient.js"></script>
-    <script src="typing.js"></script>
-    <script src="perfmon.js"></script>
+    <div id="quest">
+      <div id="part1">
+        <h1>Press the emojis for what you like <i>the most</i></h1>
+
+        <div id="emoji-buttons-container"></div>
+      </div>
+      <div id="part2">
+        <h1 id="part2-timer">01:00</h1>
+        <canvas id="part2-canvas"></canvas>
+        <audio src="/assets/effect.mp3" id="part2-sfx"></audio>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="js/copyright.js"></script>
+    <script type="module" src="js/gradient.js" async></script>
+    <script type="module" src="js/typing.js" async></script>
+    <script type="module" src="js/perfmon.js" async></script>
+    <script type="module" src="js/quest/part1.js" async></script>
+    <script type="module" src="js/quest/part2.js" async></script>
   </body>
 </html>

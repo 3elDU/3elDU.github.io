@@ -1,24 +1,8 @@
-function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
+import startPart1 from "./quest/part1";
+import { shuffle } from "./util";
 
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
-
-const technologies = [
+/** @type {string[]} */
+let technologies = [
   "JavaScript",
   "C",
   "HTML",
@@ -36,6 +20,24 @@ const technologies = [
   "Arduino",
   "Cats",
 ];
+
+const now = new Date();
+const isBday = now.getMonth() == 2 && now.getDate() == 28;
+
+const label = document.getElementById("technology");
+function openQuest() {
+  label.removeEventListener("click", openQuest);
+  label.style.cursor = "auto";
+  startPart1();
+}
+
+if (isBday) {
+  technologies = ["quests?"];
+  label.setAttribute("data-bday", "");
+  label.style.cursor = "pointer";
+  label.addEventListener("click", openQuest);
+}
+
 shuffle(technologies);
 let currentTechnology = 0;
 
@@ -47,16 +49,17 @@ let pause = false;
 // In characters per second
 const typingSpeed = 7;
 
-const label = document.getElementById("technology");
-
 function addCharacter() {
   const idx = label.innerText.length;
   if (idx == targetText.length) {
     pause = true;
-    setTimeout(() => {
-      typing = false;
-      pause = false;
-    }, (1000 / typingSpeed) * 5);
+
+    if (!isBday) {
+      setTimeout(() => {
+        typing = false;
+        pause = false;
+      }, (1000 / typingSpeed) * 5);
+    }
   }
 
   label.innerText += targetText.charAt(idx);

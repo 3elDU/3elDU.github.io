@@ -168,6 +168,29 @@ canvas {
 
 #technology {
   white-space: pre;
+
+  &[data-bday] {
+    font-size: 125%;
+    text-shadow: none;
+    background: linear-gradient(to right, #db5ef4, #4760ff, #69e9ff);
+    background-size: 200% 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    color: transparent;
+    animation: bg-gradient-move 8s ease-in-out infinite;
+  }
+}
+
+@keyframes bg-gradient-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 #cursor {

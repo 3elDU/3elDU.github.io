@@ -1,5 +1,5 @@
-import startPart3 from "./part3";
-import { selectQuestPart } from "./util";
+import startPart3 from "./part3.js";
+import { selectQuestPart } from "./util.js";
 
 const fieldWidth = 16 * 2;
 const fieldHeight = 9 * 2;

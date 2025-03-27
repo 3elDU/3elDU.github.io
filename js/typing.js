@@ -1,5 +1,5 @@
-import startPart1 from "./quest/part1";
-import { shuffle } from "./util";
+import startPart1 from "./quest/part1.js";
+import { shuffle } from "./util.js";
 
 /** @type {string[]} */
 let technologies = [

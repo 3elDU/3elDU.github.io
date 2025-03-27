@@ -1,4 +1,4 @@
-import { hideQuest } from "./util";
+import { hideQuest } from "./util.js";
 
 function mow() {
   const elements = document.querySelectorAll(

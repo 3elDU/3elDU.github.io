@@ -1,6 +1,6 @@
-import { shuffle } from "../util";
-import startPart2 from "./part2";
-import { selectQuestPart } from "./util";
+import { shuffle } from "../util.js";
+import startPart2 from "./part2.js";
+import { selectQuestPart } from "./util.js";
 
 const emojisCorrect = ["🦊", "🇯🇵", "🍣", "🍕", "🪢", "👨‍❤️‍👨"];
 const emojisWrong = ["🐛", "🐞", "🐜", "🪰", "🪲", "🐷", "🐗", "🐺", "🕷", "🐍"];
